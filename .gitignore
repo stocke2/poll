@@ -1,0 +1,8 @@
+mp/*
+log/*
+public/.htaccess
+tmp/**/*
+.DS_Store
+coverage.data
+coverage/**/*
+poll_autotest.html
