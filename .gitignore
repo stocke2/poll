@@ -6,3 +6,4 @@ tmp/**/*
 coverage.data
 coverage/**/*
 poll_autotest.html
+db/development.sqlite3
