@@ -9,21 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090221230458) do
+ActiveRecord::Schema.define(:version => 20090221230057) do
 
   create_table "answers", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "answers_polls", :id => false, :force => true do |t|
-    t.integer "answer_id"
-    t.integer "poll_id"
-  end
-
-  add_index "answers_polls", ["answer_id"], :name => "index_answers_polls_on_answer_id"
-  add_index "answers_polls", ["poll_id"], :name => "index_answers_polls_on_poll_id"
 
   create_table "polls", :force => true do |t|
     t.string   "title"
