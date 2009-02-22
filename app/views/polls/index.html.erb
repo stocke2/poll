@@ -1,0 +1,5 @@
+<% for poll in @polls %>
+<%= link_to poll.title, poll_url(poll)%><br />
+<% end %>
+
+<%= link_to "new poll", new_poll_path%>

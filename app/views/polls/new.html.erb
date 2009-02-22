@@ -1,0 +1,4 @@
+<% form_for @poll do |f| -%>
+<%= f.text_field :title %><br />
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+<% end -%>
