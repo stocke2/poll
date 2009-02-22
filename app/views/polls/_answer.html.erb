@@ -1,0 +1,11 @@
+<div class="answer">
+  <% new_or_existing = answer.new_record? ? 'new' : 'existing' %>
+  <% prefix = "poll[#{new_or_existing}_answer_attributes][]" %>
+  
+  <% fields_for prefix, answer do |answer_form| -%>
+  <p>
+    Answer: <%= answer_form.text_field :title %>
+    <%= link_to_function "remove", "$(this).up('.answer').remove()"%>
+  </p>
+  <% end -%>
+</div>

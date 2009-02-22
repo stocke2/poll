@@ -1,8 +1,17 @@
 class AnswersController < ApplicationController
   
   def create
-    @poll = Poll.find(params[:id])
-    @answer = @poll.answers.build(params[:answer])
+    @answer = Answer.new(params[:answer])
+    @answer.save
   end
+  
+  def new
+    @answer = Answer.new
+  end
+  
+  def index
+    @answer = Answer.find(:all)
+  end
+
 
 end

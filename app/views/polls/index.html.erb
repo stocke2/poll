@@ -1,5 +1,5 @@
 <% for poll in @polls %>
-<%= link_to poll.title, poll_url(poll)%><br />
+<%= link_to poll.title, poll_url(poll)%>  <%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %><br />
 <% end %>
 
 <%= link_to "new poll", new_poll_path%>

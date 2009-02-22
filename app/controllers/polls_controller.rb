@@ -2,6 +2,7 @@ class PollsController < ApplicationController
   
   def new
     @poll = Poll.new
+    2.times { @poll.answers.build }
     
   end
   
@@ -9,6 +10,7 @@ class PollsController < ApplicationController
     @poll = Poll.new(params[:poll])
     respond_to do |format|
       if @poll.save
+          
         flash[:notice]= "Poll was created successfully"
         format.html {redirect_to(@poll)}
       else
@@ -49,5 +51,15 @@ class PollsController < ApplicationController
       end
     end
   end
+  
+  def destroy
+    @poll = Poll.find(params[:id])
+    @poll.destroy
+    
+    respond_to do |format|
+      format.html {redirect_to(polls_url)}
+    end
+  end
+  
 
 end

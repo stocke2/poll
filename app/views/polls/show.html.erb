@@ -1,3 +1,6 @@
-<h1>
-<%=h @poll.title%>
-</h1>
+
+<h1><%=h @poll.title%></h1>
+<% for answer in @poll.answers%>
+<%= answer.title %><br />
+<%end%>
+

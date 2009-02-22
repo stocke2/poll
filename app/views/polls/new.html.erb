@@ -1,4 +1,15 @@
 <% form_for @poll do |f| -%>
-<%= f.text_field :title %><br />
+<p>
+<%= f.text_field :title %>
+</p>
+
+<div id='answers'>
+  <%= render :partial => 'answer', :collection => @poll.answers %>
+</div>
+<p>
+<%= add_answer_link "add an answer" %>
+</p>
+<p>
 <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+</p>
 <% end -%>
