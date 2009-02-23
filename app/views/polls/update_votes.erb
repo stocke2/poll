@@ -3,7 +3,7 @@
 <p style="color: green">Thank you for voting</p>
 <% for answer in poll.answers%>
 <span class="answer">
-<%= answer.title %></span><span class="utility"> votes: <%= answer.votes %></span><br />
+<%=h answer.title %></span><span class="utility"> votes: <%= answer.votes %></span><br />
 <%end%>
 <%= image_tag Gchart.pie_3d(:size => '800x200', :data => report[:data], :labels => report[:labels],:bar_colors=>['FF4500',"008000","0000CD","800080"])%><br />
 
