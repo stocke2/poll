@@ -1,0 +1,5 @@
+<% poll = Poll.find(params[:poll_id])%>
+<% for answer in poll.answers%>
+<span style="font-size: x-large">
+<%= answer.title %></span> votes: <%= answer.votes %><br />
+<%end%>
