@@ -29,6 +29,7 @@ class PollsController < ApplicationController
   
   def show
     @poll = Poll.find(params[:id])
+    @report = Poll.find(params[:id]).vote_report
     respond_to do |format|
       format.html
     end
@@ -70,6 +71,7 @@ class PollsController < ApplicationController
     @answer.save
     
   end
+  
   
 
 end

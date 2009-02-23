@@ -19,4 +19,14 @@ class Poll < ActiveRecord::Base
       end
     end
   end
+  
+  def vote_report
+    data = []
+    labels = []
+    Answer.find_all_by_poll_id(self.id).each do |v|
+      labels << v.title
+      data << v.votes
+    end
+    {:labels => labels, :data => data}  
+  end
 end

@@ -6,6 +6,8 @@
 <%= link_to_remote answer.title, :url => {:action => "update_votes", :id => answer.id, :poll_id=> @poll.id},
                                  :update => "answers" %></span> votes: <%= answer.votes %><br />
 <%end%>
+
+<%= image_tag Gchart.pie( :size => '800x200', :data => @report[:data], :labels => @report[:labels],:bar_colors=>['FF4500',"008000","0000CD","800080"])%><br />
 </div>
 <%= link_to 'index', polls_url%>
 <span class="admin">
