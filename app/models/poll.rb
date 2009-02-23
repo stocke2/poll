@@ -3,6 +3,8 @@ class Poll < ActiveRecord::Base
   
   validates_presence_of :title
   
+  after_update :save_answers
+  
   def new_answer_attributes=(answer_attributes)
     answer_attributes.each do |attributes|
       answers.build(attributes)
@@ -12,13 +14,21 @@ class Poll < ActiveRecord::Base
   def existing_answer_attributes=(answer_attributes)
     answers.reject(&:new_record?).each do |answer|
       attributes = answer_attributes[answer.id.to_s]
+      logger.debug(attributes)
       if attributes
         answer.attributes = attributes
       else
-        answers.delete(task)
+        answers.delete(answer)
       end
     end
   end
+  
+  def save_answers
+    answers.each do |answer|
+      answer.save(false)
+    end
+  end
+    
   
   def vote_report
     data = []
