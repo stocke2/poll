@@ -1,9 +1,10 @@
-body { background-color: #fff; color: #333; }
+body { background-color: orange; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
   line-height: 18px;
+
 }
 
 pre {
@@ -102,8 +103,15 @@ div.progressBar div.background {
 	color: 000000;
 }
 #indexpage {
-	margin-left:150px;
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 50px;
+	padding-top: 25px;
+	padding-bottom: 100px;
+	padding-left: 20 px;
+	padding-right: 20px;
+	background-color: ffffff;
 }
 .admin {
 	visibility: hidden;
