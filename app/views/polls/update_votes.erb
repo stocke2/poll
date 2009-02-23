@@ -1,8 +1,8 @@
 <% poll = Poll.find(params[:poll_id])%>
 <% report = Poll.find(params[:poll_id]).vote_report%>
 <% for answer in poll.answers%>
-<span style="font-size: x-large">
-<%= answer.title %></span> votes: <%= answer.votes %><br />
+<span class="answer">
+<%= answer.title %></span><span class="utility"> votes: <%= answer.votes %></span><br />
 <%end%>
 <%= image_tag Gchart.pie_3d(:size => '800x200', :data => report[:data], :labels => report[:labels],:bar_colors=>['FF4500',"008000","0000CD","800080"])%><br />
 

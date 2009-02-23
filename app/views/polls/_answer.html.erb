@@ -5,7 +5,7 @@
   <% fields_for prefix, answer do |answer_form| -%>
   <p>
     Answer: <%= answer_form.text_field :title %>
-    <%= link_to_function "remove", "$(this).up('.answer').remove()"%>
+    <span class="utility"><%= link_to_function "remove", "$(this).up('.answer').remove()"%></span>
   </p>
   <% end -%>
 </div>

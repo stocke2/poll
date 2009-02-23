@@ -1,7 +1,10 @@
 
-<% for poll in @polls %>
-<span style="font-size: x-large"><%= link_to poll.title, poll_url(poll)%></span> <span class='admin'><%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
-<%= link_to "edit", edit_poll_path(poll) %></span><br />
-<% end %>
+<div id="indexpage">
+  <p>Below is a list of all the polls, click on any poll to view the results or vote in it</p>
+  <% for poll in @polls %>
+  <span class="poll"><%= link_to poll.title, poll_url(poll)%></span> <span class='admin'><%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
+  <%= link_to "edit", edit_poll_path(poll) %></span><br />
+  <% end %>
 
-<%= link_to "new poll", new_poll_path%>
+  <span class="utility"><%= link_to "new poll", new_poll_path%></span>
+</div>

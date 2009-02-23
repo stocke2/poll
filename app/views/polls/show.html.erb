@@ -1,15 +1,19 @@
-
-<span style="font-size: xx-large"><%=h @poll.title%></span><br /><br />
+<div id="question">
+<span class="question"><%=h @poll.title%></span><br /><br />
+<div id="question">
 <div id="answers">
-<% for answer in @poll.answers%>
-<span style="font-size: x-large">
-<%= link_to_remote answer.title, :url => {:action => "update_votes", :id => answer.id, :poll_id=> @poll.id},
-                                 :update => "answers" %></span> votes: <%= answer.votes %><br />
-<%end%>
-
-<%= image_tag Gchart.pie_3d( :size => '800x200', :data => @report[:data], :labels => @report[:labels],:bar_colors=>['FF4500',"008000","0000CD","800080"])%><br />
+  <% for answer in @poll.answers%>
+    <span class="answer">
+    <%= link_to_remote answer.title, :url => {:action => "update_votes", :id => answer.id, :poll_id=> @poll.id},
+                                     :update => "answers" %></span><span class="utility"> votes: <%= answer.votes %></span><br />
+  <%end%>
+  <div id="graph">
+  <%= image_tag Gchart.pie_3d( :size => '800x200', :data => @report[:data], :labels => @report[:labels],:bar_colors=>['FF4500',"008000","0000CD","800080"])%>
+  </div>
 </div>
-<%= link_to 'index', polls_url%>
+
+<span class="utility"><%= link_to 'index', polls_url%></span>
+
 <span class="admin">
 <%= link_to 'edit', edit_poll_path(@poll)%>
 </span>

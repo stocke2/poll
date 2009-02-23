@@ -3,11 +3,11 @@
 Question: <%= f.text_field :title %>
 </p>
 
-<div id='answers'>
+<div id='answers_list'>
   <%= render :partial => 'answer', :collection => @poll.answers %>
 </div>
 <p>
-<%= add_answer_link "add an answer" %>
+<span class="utility"<%= add_answer_link "add an answer" %></span>
 </p>
 <p>
 <%= f.submit "Submit", :disable_with => 'Submiting...' %>

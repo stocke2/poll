@@ -12,7 +12,7 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
+/*a { color: #000; }*/
 /*a:visited { color: #666; }*/
 /*a:hover { color: #fff; background-color:#000; }*/
 
@@ -74,3 +74,45 @@ div.progressBar div.background {
   width: 0%;
 }
 
+.question {
+	font-size: 32px;
+	font-weight: bold;
+	font-family: sans-serrif;
+	color: FF4500;
+}
+#question {
+	text-align: center;
+}
+#answers {
+	text-align: center;
+	color: 000000;
+	font-weight: bold;
+}
+#answers a {
+	color: 00000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.poll {
+	font-size: 12px;
+	font-weight: bold;
+}
+.poll a {
+	text-decoration: none;
+	color: 000000;
+}
+#indexpage {
+	margin-left:150px;
+	margin-top: 50px;
+}
+.admin {
+	visibility: hidden;
+}
+.utility {
+	font-size: 10px;
+	color: FF4500;
+}
+.utility a{
+	color: FF4500;
+	font-weight: bold;
+}
