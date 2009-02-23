@@ -6,5 +6,9 @@
   </div>
 </body>
 <div id="footer">
-  <%= link_to(image_tag("MHBadge_Orange.jpg"), "http://macheist.com") %>
+  <%= link_to(image_tag("MHBadge_Orange.jpg"), "http://macheist.com") %><br />
+  <% if logged_in?%>
+  <span class="utility"><%=link_to "logout", logout_path%></span>
+  <%end%>
+  
 </div>

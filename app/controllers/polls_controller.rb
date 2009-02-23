@@ -1,5 +1,5 @@
 class PollsController < ApplicationController  
-  
+  before_filter :login_required, :only=>[:edit, :destroy, :update]
   def new
     @poll = Poll.new
     2.times { @poll.answers.build }

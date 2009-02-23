@@ -7,9 +7,11 @@
   <span class="utility"><%= link_to "new poll", new_poll_path%></span><br />
   
   <% for poll in @polls %>
-  <span class="poll"><%= link_to poll.title, poll_url(poll)%></span> <span class='admin'><%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
-  <%= link_to "edit", edit_poll_path(poll) %></span><br />
-  <% end %>
-
+  <span class="poll"><%= link_to poll.title, poll_url(poll)%></span> 
+  <% if logged_in?%>
+  <span class='admin'><%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
+  <%= link_to "edit", edit_poll_path(poll) %></span>
+  <% end %><br />
+  <%end%>
  
 </div>
