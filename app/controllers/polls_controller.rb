@@ -42,6 +42,8 @@ class PollsController < ApplicationController
   end
   
   def update
+    params[:poll][:existing_answer_attributes] || {}
+    
     @poll = Poll.find(params[:id])
     respond_to do |format|
       if @poll.update_attributes(params[:poll])
