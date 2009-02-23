@@ -47,6 +47,7 @@ class PollsController < ApplicationController
     @poll = Poll.find(params[:id])
     respond_to do |format|
       if @poll.update_attributes(params[:poll])
+        flash[:notice] = "Poll updated successfully"
         format.html{redirect_to(@poll)}
       else
         format.html {render :action=>"edit"}
@@ -61,6 +62,13 @@ class PollsController < ApplicationController
     respond_to do |format|
       format.html {redirect_to(polls_url)}
     end
+  end
+  
+  def update_votes
+    @answer = Answer.find(params[:id])
+    @answer.votes = @answer.votes + 1
+    @answer.save
+    
   end
   
 

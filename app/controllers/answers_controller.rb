@@ -12,6 +12,13 @@ class AnswersController < ApplicationController
   def index
     @answer = Answer.find(:all)
   end
+  
+  def update_votes
+    @answer = Answer.find(params[:id])
+    @answer.votes = @anser.votes + 1
+    @answer.save
+    
+  end
 
 
 end

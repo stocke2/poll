@@ -1,6 +1,7 @@
+
 <% for poll in @polls %>
-<%= link_to poll.title, poll_url(poll)%>  <%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
-<%= link_to "edit", edit_poll_path(poll) %><br />
+<span style="font-size: x-large"><%= link_to poll.title, poll_url(poll)%></span> <span class='admin'><%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
+<%= link_to "edit", edit_poll_path(poll) %></span><br />
 <% end %>
 
 <%= link_to "new poll", new_poll_path%>

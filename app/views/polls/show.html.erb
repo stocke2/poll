@@ -1,7 +1,13 @@
 
-<h1><%=h @poll.title%></h1>
+<span style="font-size: xx-large"><%=h @poll.title%></span><br /><br />
+<div id="answers">
 <% for answer in @poll.answers%>
-<%= answer.title %><br />
+<span style="font-size: x-large">
+<%= link_to_remote answer.title, :url => {:action => "update_votes", :id => answer.id, :poll_id=> @poll.id},
+                                 :update => "answers" %></span> votes: <%= answer.votes %><br />
 <%end%>
-
+</div>
 <%= link_to 'index', polls_url%>
+<span class="admin">
+<%= link_to 'edit', edit_poll_path(@poll)%>
+</span>
