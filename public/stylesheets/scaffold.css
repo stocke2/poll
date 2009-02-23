@@ -119,11 +119,22 @@ div.progressBar div.background {
 	margin-right: auto;
 	margin-top: 50px;
 	padding-top: 25px;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 	padding-left: 20 px;
 	padding-right: 20px;
 	background-color: ffffff;
 	
+}
+#footer {
+/*	width: 600 px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 80px;
+	float: left;
+	clear: both;
+*/
+  margin-top: 20px;
+  text-align: center;
 }
 .admin {
 	visibility: hidden;
