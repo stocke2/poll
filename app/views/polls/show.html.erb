@@ -16,7 +16,9 @@
 
   <span class="utility"><%= link_to 'index', polls_url%></span>
 
+  <% if logged_in?%>
   <span class="admin">
   <%= link_to 'edit', edit_poll_path(@poll)%>
   </span>
+  <% end %>
 </div>
