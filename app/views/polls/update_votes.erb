@@ -4,6 +4,6 @@
 <span style="font-size: x-large">
 <%= answer.title %></span> votes: <%= answer.votes %><br />
 <%end%>
-<%= image_tag Gchart.pie(:size => '800x200', :data => report[:data], :labels => report[:labels],:bar_colors=>['FF4500',"008000","0000CD","800080"])%><br />
+<%= image_tag Gchart.pie_3d(:size => '800x200', :data => report[:data], :labels => report[:labels],:bar_colors=>['FF4500',"008000","0000CD","800080"])%><br />
 
 
