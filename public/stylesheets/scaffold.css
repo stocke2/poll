@@ -1,4 +1,8 @@
-body { background-color: orange; color: #333; }
+body { 
+	background-color: orange; 
+	background-image: url(/images/page-bg.png);
+	background-repeat: repeat;
+	color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -103,9 +107,9 @@ div.progressBar div.background {
 	color: 000000;
 }
 #indexpage {
-	width: 600px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 850px;
+	margin-left: 95px;
+/*	margin-right: auto;*/
 	margin-top: 50px;
 	padding-top: 25px;
 	padding-bottom: 100px;
@@ -115,8 +119,8 @@ div.progressBar div.background {
 }
 #showpage {
 	width: 850px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 95px;
+/*	margin-right: auto;*/
 	margin-top: 50px;
 	padding-top: 25px;
 	padding-bottom: 50px;
@@ -126,13 +130,6 @@ div.progressBar div.background {
 	
 }
 #footer {
-/*	width: 600 px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 80px;
-	float: left;
-	clear: both;
-*/
   margin-top: 20px;
   text-align: center;
 }
