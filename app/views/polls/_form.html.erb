@@ -7,9 +7,12 @@ Question: <%= f.text_field :title %>
   <%= render :partial => 'answer', :collection => @poll.answers %>
 </div>
 <p>
-<span class="utility"<%= add_answer_link "add an answer" %></span>
+<span class="utility"><%= add_answer_link "add an answer" %></span>
 </p>
 <p>
 <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+</p>
+<p>
+  <%= link_to 'Cancel', polls_path %>
 </p>
 <% end -%>
