@@ -1,10 +1,13 @@
 
 <div id="indexpage">
-  <p>Below is a list of all the polls, click on any poll to view the results or vote in it</p>
+  <p>Below is a list of all the polls, click on any poll to view the poll and it's results. Then simply click on the answer you want to cast your vote.</p>
+  <p>The entire MH community is welcome, this is just a simple diversion for us to have a little fun between missions. Please keep it civil and clean.</p>
+  <span class="utility"><%= link_to "new poll", new_poll_path%></span><br />
+  
   <% for poll in @polls %>
   <span class="poll"><%= link_to poll.title, poll_url(poll)%></span> <span class='admin'><%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
   <%= link_to "edit", edit_poll_path(poll) %></span><br />
   <% end %>
 
-  <span class="utility"><%= link_to "new poll", new_poll_path%></span>
+ 
 </div>
