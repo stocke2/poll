@@ -1,5 +1,6 @@
 <% poll = Poll.find(params[:poll_id])%>
 <% report = Poll.find(params[:poll_id]).vote_report%>
+<p style="color: green">Thank you for voting</p>
 <% for answer in poll.answers%>
 <span class="answer">
 <%= answer.title %></span><span class="utility"> votes: <%= answer.votes %></span><br />

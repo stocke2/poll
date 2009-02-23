@@ -69,6 +69,7 @@ class PollsController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.votes = @answer.votes + 1
     @answer.save
+   
     
   end
   
