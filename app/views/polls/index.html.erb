@@ -1,13 +1,16 @@
 
 <div id="indexpage">
-  <h1 style="color: FF4500">MacHeist community polling</h1>
+  <h1 style="color: FF4500">MacHeist Community Polling</h1>
     <p>These polls are just for fun, and not affiliated with MacHeist. Made available to you by the Orange team for entertainment purposes only!</p>
   <p>Below is a list of all the polls, click on any poll to view the poll and its results. Then simply click on the answer you want to cast your vote.</p>
   <p>The entire MH community is welcome, this is just a simple diversion for us to have a little fun between missions. Please keep it civil and clean.</p>
   <span class="utility"><%= link_to "new poll", new_poll_path%></span><br />
   
   <% for poll in @polls %>
-  <span class="poll"><%= link_to poll.title, poll_url(poll)%></span> 
+  <% total = 0 %>
+  <% for answer in poll.answers %><% total = total + answer.votes %><%end%>
+  <span class="poll"><%= link_to poll.title, poll_url(poll)%>--</span><%=total%> votes 
+ 
   <% if logged_in?%>
   <span class='admin'><%= link_to "delete", poll, :confirm => "are you sure?", :method=>:delete %> | 
   <%= link_to "edit", edit_poll_path(poll) %></span>
