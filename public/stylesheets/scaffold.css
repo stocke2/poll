@@ -2,6 +2,7 @@ body {
 	background-color: black; 
 	background-image: url(/images/page-bg.png);
 	background-repeat: repeat-y;
+	background-attachment: fixed;
 	color: #333; }
 
 body, p, ol, ul, td {
