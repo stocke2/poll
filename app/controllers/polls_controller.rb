@@ -20,7 +20,7 @@ class PollsController < ApplicationController
   end
   
   def index
-    @polls = Poll.find(:all)
+    @polls = Poll.find(:all, :order => "created_at DESC")
     respond_to do |format|
       format.html
     end
